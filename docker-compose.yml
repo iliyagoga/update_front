@@ -1,0 +1,204 @@
+version: '3.8'
+services:
+  sso-db:
+    image: postgres:15-alpine3.19
+    env_file:
+      - ./docker/sso/sso-db.env
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U username -d summer" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    ports:
+      - "5432:5432"
+    networks:
+      - sso_net
+    volumes:
+      - ./docker/sso/db-scripts:/docker-entrypoint-initdb.d/
+      - sso-data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  sso-server:
+    image: sso-server:0.0.1
+    build:
+      context: ./simple-sso
+      dockerfile: Dockerfile
+    depends_on:
+      - sso-db
+    networks:
+      - apis_net
+      - sso_net
+    env_file:
+      - ./docker/sso/sso-server.env
+
+  users-db:
+    image: postgres:15-alpine3.19
+    env_file:
+      - ./docker/users/users-db.env
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U username -d summer" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - users_net
+    volumes:
+      - ./docker/users/db-scripts:/docker-entrypoint-initdb.d/
+      - users-data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+
+
+  users-service:
+    image: users-service:0.0.1
+    build:
+      context: ./user-service
+      dockerfile: Dockerfile
+    depends_on:
+      - users-db
+    networks:
+      - apis_net
+      - users_net
+    env_file:
+      - ./docker/users/users-service.env
+
+  competitions-db:
+    image: postgres:15-alpine3.19
+    env_file:
+      - ./docker/competitions/competitions-db.env
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U username -d summer" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - competitions_net
+    volumes:
+      - ./docker/competitions/db-scripts:/docker-entrypoint-initdb.d/
+      - competitions_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  competition-server:
+    image: competition-server:0.0.1
+    build:
+      context: ./competition-service
+      dockerfile: Dockerfile
+    depends_on:
+      - competitions-db
+    networks:
+      - apis_net
+      - competitions_net
+    env_file:
+      - docker/competitions/competition-service.env
+
+  articles-db:
+    image: postgres:15-alpine3.19
+    env_file:
+      - ./docker/articles/articles-db.env
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U username -d summer" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - articles_net
+    volumes:
+      - ./docker/articles/db-scripts:/docker-entrypoint-initdb.d/
+      - articles_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  article-server:
+    image: article-server:0.0.1
+    build:
+      context: ./articles-service
+      dockerfile: Dockerfile
+    depends_on:
+      - articles-db
+    networks:
+      - apis_net
+      - articles_net
+    env_file:
+      - docker/articles/article-service.env
+
+  qa_db:
+    image: postgres:15-alpine3.19
+    env_file:
+      - docker/qa/qas-db.env
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U username -d summer" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - qas_net
+    volumes:
+      - ./docker/qa/db-scripts:/docker-entrypoint-initdb.d/
+      - qas_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  qa-server:
+    image: qa-server:0.0.1
+    build:
+      context: ./qa-service
+      dockerfile: Dockerfile
+    depends_on:
+      - qa_db
+    networks:
+      - apis_net
+      - qas_net
+    env_file:
+      - docker/qa/qa-service.env
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:8080"
+    networks:
+      - apis_net
+    depends_on:
+      - competition-server
+      - sso-server
+      - users-service
+      - article-server
+      - qa-server
+      - frontend
+    volumes:
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d
+
+
+
+  frontend:
+    image: front:0.0.1
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    networks:
+      - apis_net
+
+volumes:
+  sso-data:
+  users-data:
+  competitions_data:
+  articles_data:
+  qas_data:
+
+networks:
+  apis_net:
+    driver: bridge
+  sso_net:
+    driver: bridge
+  users_net:
+    driver: bridge
+  competitions_net:
+    driver: bridge
+  articles_net:
+    driver: bridge
+  qas_net:
+    driver: bridge

@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+@media screen and (max-width: 425px) {
+  body {
+    background: #1E1E1E;
+  }
+}/*# sourceMappingURL=default.css.map */

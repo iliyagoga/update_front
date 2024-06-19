@@ -1,0 +1,155 @@
+.comments {
+  display: flex;
+  flex-direction: column;
+  padding: 2.25rem;
+  background: #1E1E1E;
+  border-radius: 8px;
+  border: 4px solid #1400FF;
+  box-sizing: border-box;
+  width: calc(100% - 1rem);
+  margin-left: 1rem;
+  justify-content: center;
+}
+@media screen and (max-width: 425px) {
+  .comments {
+    padding: 1rem;
+    margin-left: 0;
+    width: 100%;
+  }
+}
+.comments h3 {
+  font-weight: 500;
+  color: white;
+  font-size: 2.375rem;
+}
+@media screen and (max-width: 425px) {
+  .comments h3 {
+    font-size: 1.5rem;
+  }
+}
+.comments .cs {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5.8125rem;
+}
+@media screen and (max-width: 425px) {
+  .comments .cs {
+    margin-left: 0;
+  }
+}
+.comments .cs .comment {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3.75rem;
+}
+.comments .cs .comment .info {
+  display: flex;
+  align-items: center;
+}
+.comments .cs .comment .info .img {
+  width: 4.4375rem;
+  height: 4.4375rem;
+  border-radius: 100%;
+  position: relative;
+  overflow: hidden;
+}
+@media screen and (max-width: 425px) {
+  .comments .cs .comment .info .img {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+.comments .cs .comment .info .img img {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.comments .cs .comment .info .i {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1.0625rem;
+}
+.comments .cs .comment .info .i h4 {
+  margin: 0;
+  font-size: 1.5625rem;
+  line-height: 150%;
+  font-weight: 500;
+  color: white;
+}
+@media screen and (max-width: 425px) {
+  .comments .cs .comment .info .i h4 {
+    font-size: 1rem;
+  }
+}
+.comments .cs .comment .info .i span {
+  color: rgba(255, 255, 255, 0.6980392157);
+  font-size: 1rem;
+  font-weight: 100;
+}
+.comments .cs .comment .text {
+  color: white;
+  font-weight: 500;
+  line-height: 150%;
+}
+.comments .form {
+  display: flex;
+  flex-direction: column;
+}
+.comments .form h4 {
+  font-weight: 500;
+  color: white;
+  font-size: 2.375rem;
+}
+@media screen and (max-width: 425px) {
+  .comments .form h4 {
+    font-size: 1.5rem;
+  }
+}
+.comments .form .r {
+  display: flex;
+  align-items: center;
+}
+.comments .form .r .input {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 4px solid #1400FF;
+  box-sizing: border-box;
+}
+.comments .form .r .input textarea {
+  background: #1E1E1E;
+  height: 2rem;
+  outline: 0;
+  border: 0;
+  width: 100%;
+  font-size: 1.5625rem;
+  height: 4rem;
+  box-sizing: border-box;
+  color: white;
+}
+@media screen and (max-width: 425px) {
+  .comments .form .r .input textarea {
+    font-size: 1rem;
+  }
+}
+.comments .form .r .input img {
+  cursor: pointer;
+}
+.comments .form .r .send {
+  margin-left: 1.0625rem;
+  cursor: pointer;
+}
+@media screen and (max-width: 425px) {
+  .comments .form .r .send {
+    margin-left: 0.5rem;
+  }
+}
+@media screen and (max-width: 425px) {
+  .comments .form .r .send img {
+    width: 2rem;
+  }
+}/*# sourceMappingURL=comments.css.map */

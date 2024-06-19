@@ -1,0 +1,150 @@
+.mean {
+  background: #1E1E1E;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.mean .bg {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+.mean .bg img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+}
+.mean .header {
+  width: 100%;
+  padding: 3.0625rem 6.5rem;
+  display: flex;
+  justify-content: right;
+  box-sizing: border-box;
+  z-index: 2;
+}
+@media screen and (max-width: 425px) {
+  .mean .header {
+    padding: 1rem;
+  }
+}
+.mean .header .btn {
+  padding: 0.5625rem 1.1875rem;
+  border-radius: 8px;
+  border: 4px solid #1400FF;
+  width: -moz-max-content;
+  width: max-content;
+  cursor: pointer;
+}
+.mean .header .btn span {
+  color: white;
+  font-size: 1.5625rem;
+  font-weight: 500;
+}
+.mean .body {
+  z-index: 10;
+}
+.mean .body .h {
+  display: flex;
+  justify-content: center;
+  padding: 0 1.1875rem;
+  box-sizing: border-box;
+  justify-content: space-evenly;
+  width: 70%;
+  margin: auto;
+}
+@media screen and (max-width: 425px) {
+  .mean .body .h {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+}
+.mean .body .h .l {
+  width: 47%;
+}
+.mean .body .h .l img {
+  width: 100%;
+}
+.mean .body .h .r {
+  width: 47%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media screen and (max-width: 425px) {
+  .mean .body .h .r {
+    width: 100%;
+    text-align: center;
+  }
+}
+.mean .body h1 {
+  font-size: 2.375rem;
+  font-weight: 500;
+  color: white;
+  line-height: 150%;
+}
+.mean .body h2 {
+  font-size: 1.5625rem;
+  font-weight: 500;
+  color: white;
+  text-align: center;
+  margin-top: 3.125rem;
+  line-height: 150%;
+}
+.mean .body h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 150%;
+  color: white;
+}
+.mean .body .blocks {
+  padding: 0 1.1875rem;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  align-items: center;
+}
+.mean .body .blocks .block {
+  box-sizing: border-box;
+  background: #1E1E1E;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  width: 70%;
+  align-items: center;
+  padding: 2.25rem;
+  border-radius: 8px;
+  border: 4px solid #1400FF;
+  z-index: 10;
+  margin-top: 3.125rem;
+}
+@media screen and (max-width: 425px) {
+  .mean .body .blocks .block {
+    width: 100%;
+  }
+}
+.mean .body .blocks .block span {
+  font-size: 2.375rem;
+  color: white;
+  font-weight: 500;
+}
+@media screen and (max-width: 425px) {
+  .mean .body .blocks .block span {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 425px) {
+  .mean .body .blocks .block .img {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .mean .body .blocks .block .img img {
+    width: 100%;
+  }
+}/*# sourceMappingURL=mean.css.map */

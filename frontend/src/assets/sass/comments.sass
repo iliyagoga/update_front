@@ -1,0 +1,115 @@
+.comments
+    display: flex
+    flex-direction: column
+    padding: 2.25rem
+    background: #1E1E1E
+    border-radius: 8px
+    border: 4px solid #1400FF
+    box-sizing: border-box
+    width: calc( 100% - 1rem )
+    margin-left: 1rem
+    justify-content: center
+    @media  screen and (max-width: 425px)
+        padding: 1rem
+        margin-left: 0
+        width: 100%
+    & h3
+        font-weight: 500
+        color: white
+        font-size: 2.375rem
+        @media  screen and (max-width: 425px)
+            font-size: 1.5rem
+    & .cs
+        display: flex
+        flex-direction: column
+        margin-left: 5.8125rem
+        @media  screen and (max-width: 425px)
+            margin-left: 0
+        & .comment
+            display: flex
+            flex-direction: column
+            margin-top: 3.75rem
+            & .info
+                display: flex
+                align-items: center
+                & .img
+                    width: 4.4375rem
+                    height: 4.4375rem
+                    border-radius: 100%
+                    position: relative
+                    overflow: hidden
+                    @media  screen and (max-width: 425px)
+                        width: 3rem
+                        height: 3rem
+                    & img
+                        position: absolute
+                        top: 0
+                        height: 100%
+                        left: 50%
+                        transform: translate(-50%,0)
+                & .i
+                    display: flex
+                    flex-direction: column
+                    margin-left: 1.0625rem
+                    & h4
+                        margin: 0
+                        font-size: 1.5625rem
+                        line-height: 150%
+                        font-weight: 500
+                        color: white
+                        @media  screen and (max-width: 425px)
+                            font-size: 1rem
+                    & span
+                        color: #ffffffb2
+                        font-size: 1rem
+                        font-weight: 100
+            & .text
+                color: white
+                font-weight: 500
+                line-height: 150%
+    & .form
+        display: flex
+        flex-direction: column
+        & h4
+            font-weight: 500
+            color: white
+            font-size: 2.375rem
+            @media  screen and (max-width: 425px)
+                font-size: 1.5rem
+        & .r
+            display: flex
+            align-items: center
+            & .input
+                display: flex
+                align-items: center
+                width: 100%
+                padding: .75rem
+                border-radius: 8px
+                border: 4px solid #1400FF
+                box-sizing: border-box
+                & textarea
+                    background: #1E1E1E
+                    height: 2rem
+                    outline: 0
+                    border: 0
+                    width: 100%
+                    font-size: 1.5625rem
+                    height: 4rem
+                    box-sizing: border-box
+                    color: white
+                    @media  screen and (max-width: 425px)
+                        font-size: 1rem
+                & img
+                    cursor: pointer
+                        
+            & .send
+                margin-left: 1.0625rem
+                cursor: pointer
+                @media  screen and (max-width: 425px)
+                    margin-left: .5rem
+                & img
+                    @media  screen and (max-width: 425px)
+                        width: 2rem
+
+
+    

@@ -1,0 +1,278 @@
+.profile,
+.profilePerson {
+  display: flex;
+  padding: 0 3.9375rem;
+  width: 100vw;
+}
+@media screen and (max-width: 425px) {
+  .profile,
+  .profilePerson {
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+  }
+}
+.profile .container,
+.profilePerson .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 2.5rem;
+  width: 80%;
+}
+@media screen and (max-width: 425px) {
+  .profile .container,
+  .profilePerson .container {
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+.profile .container .middle,
+.profilePerson .container .middle {
+  margin-top: 7.2rem;
+  width: 80%;
+}
+@media screen and (max-width: 425px) {
+  .profile .container .middle,
+  .profilePerson .container .middle {
+    width: 100%;
+  }
+}
+.profile .container .middle .fio,
+.profilePerson .container .middle .fio {
+  display: flex;
+  justify-content: right;
+}
+.profile .container .middle .fio span,
+.profilePerson .container .middle .fio span {
+  font-size: 2.375rem;
+  color: white;
+  font-weight: 500;
+}
+.profile .container .middle .aboutme,
+.profilePerson .container .middle .aboutme {
+  border-radius: 8px;
+  border: 4px solid #1400FF;
+  background: #1E1E1E;
+  padding: 1.625rem 2.0625rem;
+}
+.profile .container .middle .aboutme h3,
+.profilePerson .container .middle .aboutme h3 {
+  color: white;
+  font-size: 1.5625rem;
+  margin: 0;
+}
+.profile .container .middle .aboutme p,
+.profilePerson .container .middle .aboutme p {
+  color: white;
+  font-weight: 500;
+  line-height: 150%;
+}
+.profile .container .middle .projects_block,
+.profilePerson .container .middle .projects_block {
+  border-radius: 8px;
+  border: 4px solid #1400FF;
+  background: #1E1E1E;
+  padding: 0.5625rem 2.0625rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.9375rem;
+}
+.profile .container .middle .projects_block span,
+.profilePerson .container .middle .projects_block span {
+  color: white;
+  font-size: 1.5625rem;
+  font-weight: 500;
+}
+.profile .container .middle .projects_block .icons,
+.profilePerson .container .middle .projects_block .icons {
+  display: flex;
+  align-items: center;
+  width: 3.5rem;
+  justify-content: space-between;
+}
+.profile .container .middle .projects_block .icons img,
+.profilePerson .container .middle .projects_block .icons img {
+  cursor: pointer;
+}
+.profile .container .middle .articles,
+.profilePerson .container .middle .articles {
+  width: 100%;
+  height: 50rem;
+  background: #1E1E1E;
+  margin-top: 1rem;
+  overflow-y: scroll;
+  border-radius: 8px;
+  border: 4px solid #1400FF;
+}
+@media screen and (max-width: 425px) {
+  .profile .container .middle .articles,
+  .profilePerson .container .middle .articles {
+    height: 40rem;
+    background: #1E1E1E;
+  }
+}
+.profile .container .middle .articles::-webkit-scrollbar,
+.profilePerson .container .middle .articles::-webkit-scrollbar {
+  display: none;
+}
+.profile .container .middle .articles > *:not(:first-child),
+.profilePerson .container .middle .articles > *:not(:first-child) {
+  margin-top: 1rem;
+}
+.profile .container .p_card,
+.profilePerson .container .p_card {
+  margin-top: 3.875rem;
+  margin-left: 2.5rem;
+  overflow-y: scroll;
+}
+@media screen and (max-width: 425px) {
+  .profile .container .p_card,
+  .profilePerson .container .p_card {
+    width: 100%;
+    margin: 3.875rem auto 0;
+  }
+}
+.profile .container .p_card::-webkit-scrollbar,
+.profilePerson .container .p_card::-webkit-scrollbar {
+  display: none;
+}
+.profile .container .p_card .avatar,
+.profilePerson .container .p_card .avatar {
+  padding: 1.6875rem 1.3125rem;
+  background: #1E1E1E;
+  border-radius: 8px;
+  border: 4px solid #1400FF;
+  width: 16.875rem;
+  height: 23rem;
+  position: relative;
+}
+@media screen and (max-width: 425px) {
+  .profile .container .p_card .avatar,
+  .profilePerson .container .p_card .avatar {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+.profile .container .p_card .avatar .write,
+.profilePerson .container .p_card .avatar .write {
+  position: absolute;
+  width: -moz-max-content;
+  width: max-content;
+  border-radius: 8px;
+  border: 4px solid #1400FF;
+  background: #1E1E1E;
+  padding: 0.5625rem 1.1875rem;
+  height: -moz-max-content;
+  height: max-content;
+  bottom: -1rem;
+  left: 50%;
+  z-index: 10;
+  transform: translate(-50%, 0);
+  cursor: pointer;
+}
+.profile .container .p_card .avatar .write span,
+.profilePerson .container .p_card .avatar .write span {
+  color: white;
+  font-weight: 500;
+  font-size: 1.5625rem;
+}
+.profile .container .p_card .avatar .img,
+.profilePerson .container .p_card .avatar .img {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.profile .container .p_card .avatar .img img,
+.profilePerson .container .p_card .avatar .img img {
+  left: 50%;
+  position: absolute;
+  overflow: hidden;
+  transform: translate(-50%, 0);
+  height: 100%;
+}
+.profile .container .p_card .avatar .img input,
+.profilePerson .container .p_card .avatar .img input {
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  cursor: pointer;
+  z-index: 5;
+}
+.profile .container .p_card .links,
+.profilePerson .container .p_card .links {
+  padding: 2.5rem 1.0625rem;
+  border-radius: 8px;
+  border: 4px solid #1400FF;
+  background: #1E1E1E;
+  height: 12rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 1.0625rem;
+}
+.profile .container .p_card .links .link a,
+.profilePerson .container .p_card .links .link a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+.profile .container .p_card .links .link a span,
+.profilePerson .container .p_card .links .link a span {
+  margin-left: 1.0625rem;
+}
+.profile .container .p_card .skills,
+.profilePerson .container .p_card .skills {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.0625rem;
+}
+.profile .container .p_card .skills .s_top,
+.profilePerson .container .p_card .skills .s_top {
+  padding: 0.5625rem 1.25rem;
+  border-radius: 8px;
+  border: 4px solid #1400FF;
+  background: #1E1E1E;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profile .container .p_card .skills .s_top span,
+.profilePerson .container .p_card .skills .s_top span {
+  color: white;
+  font-weight: 500;
+  font-size: 1.5625rem;
+}
+.profile .container .p_card .skills .s_top img,
+.profilePerson .container .p_card .skills .s_top img {
+  cursor: pointer;
+}
+.profile .container .p_card .skills .list,
+.profilePerson .container .p_card .skills .list {
+  display: flex;
+  gap: 1.0625rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1.0625rem;
+}
+.profile .container .p_card .skills .list .skill,
+.profilePerson .container .p_card .skills .list .skill {
+  padding: 0.5625rem 1.1875rem;
+  border-radius: 8px;
+  border: 4px solid #1400FF;
+  background: #1E1E1E;
+  width: -moz-max-content;
+  width: max-content;
+}
+.profile .container .p_card .skills .list .skill span,
+.profilePerson .container .p_card .skills .list .skill span {
+  color: white;
+  font-weight: 500;
+}/*# sourceMappingURL=profile.css.map */
